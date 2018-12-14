@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load staticfiles %}
+<head>
+<title>Ascensores</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+<link rel="stylesheet" href="{% static 'css/orden.css' %}">
+<link rel="stylesheet" href="{% static 'css/font.css' %}">  
+<link rel="stylesheet" href="{% static 'css/tabla.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/png" href="{% static 'imagenes/icono.ico' %}" />
+</head>
+<body>
+
+<!-- MENU -->
+
+<div class="topnav" id="myTopnav">
+  <a href="{% url 'pagina_index' %}" class="active">INICIO</a>
+  <a href="{% url 'pagina_login' %}">INICIAR SESION</a>
+  <a href="{% url 'pagina_ordenes' %}">ORDENES</a>
+  <a href="{% url 'pagina_clientes' %}">CLIENTES</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+<!-- FIN MENU -->
+
+<!-- Header -->
+<div class="banner">
+	    <img src="{% static 'imagenes/banner.jpg' %}" alt="" class="responsive">
+	    <div class="contenedor">
+	        <h2 class="banner_titulo">Mantención Ascensores</h2>
+	        <p class="banner_txt">La mejor empresa en el rubro</p>
+	    </div>
+</div>
+<!-- CONTENIDO -->
+{% block content %}
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nombre cliente</th>
+      <th>Fecha</th>
+      <th>Hora inicio</th>
+      <th>Hora Fin</th>
+      <th>Codigo Ascensor</th>
+      <th>Fallas</th>
+      <th>Reparaciones</th>
+      <th>Piezas cambiadas</th>
+      <th>Nombre cliente</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if ordenes %}
+    {% for orden in ordenes %}
+    <tr>
+      <td data-label="Nombre cliente">{{ orden.Nombre_cliente }}</td>
+      <td data-label="Fecha">{{ orden.Fecha }}</td>
+      <td data-label="Hora inicio">{{ orden.Hora_inicio }}</td>
+      <td data-label="Hora fin">{{ orden.Hora_fin }}</td>
+      <td data-label="Codigo Ascensor">{{ orden.Codigo_ascensor }}</td>
+      <td data-label="Fallas">{{ orden.Fallas }}</td>
+      <td data-label="Reparaciones">{{ orden.Reparaciones }}</td>
+      <td data-label="Piezas cambiadas">{{ orden.Piezas_cambiadas }}</td>
+      <td data-label="Nombre cliente">{{ orden.Nombre_cliente }}</td>
+    </tr>
+      {% endfor %}
+
+      {% else %}
+      <h1>No hay Ordenes</h1>
+
+      {% endif %}
+  </tbody>
+</table>
+{% endblock %}
+
+
+
+<!-- Footer -->
+<div class="footer">
+    <h3>AV-AS-IJ</h3>
+    <h4>Analista Programador Computacional 001D</h4>
+</div>
+</body>
+</html>

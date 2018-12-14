@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+
+
+input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=reset] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a070;
+}
+
+input[type=reset]:hover {
+    background-color: #45a070;
+}
+
+.titulo {
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    margin-bottom: -7px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+    margin-bottom: 9px;
+}
+
+.col-75, select, option {
+    width: 220px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media(min-width:320px) {
+    .col-25, .col-75, input[type], select {
+        width: 100%;
+        margin-top: 2px;
+        font-size: 20px;
+    }
+    
+    select {
+        width: 220px;
+    }
+    
+}
+
+@media(min-width:360px) {
+    .col-25, .col-75, input[type], select {
+        width: 100%;
+        margin-top: 2px;
+        font-size: 15px;
+    }
+    
+    select {
+        width: 220px;
+    }
+    
+}
+
+
+@media(min-width:411px) {
+    .col-25, .col-75, input[type], select {
+        width: 100%;
+        margin-top: 2px;
+        font-size: 20px;
+    }
+    
+    select {
+        width: 220px;
+    }
+    
+}
+
+
+@media(min-width:768px) {
+    .col-25, .col-75, input[type], select {
+        width: 100%;
+        margin-top: 2px;
+        font-size: 30px;
+    }
+    
+    select {
+        width: 260px;
+        overflow: hidden;
+        font-size: 30px;
+    }
+}
+
+@media(min-width:1024px) {
+   .col-25, .col-75, input[type=submit], input[type=reset] {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+@media(min-width:1366px) {
+   .col-25, .col-75, input[type=submit], input[type=reset], select, option {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    input[type=text], input[type=email], input[type=password], input[type=number], input[type=date], input[type=time] {
+        font-size: 15px;
+    }
+    
+    
+}
+
+
+
+
+

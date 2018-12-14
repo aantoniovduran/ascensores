@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load staticfiles %}
+<head>
+<title>Ascensores</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+<link rel="stylesheet" href="{% static 'css/orden.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/ordenes.css' %}">
+<link rel="stylesheet" href="{% static 'css/font.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/png" href="{% static 'imagenes/icono.ico' %}" />
+</head>
+<body>
+
+<!-- MENU -->
+
+<div class="topnav" id="myTopnav">
+  <a href="{% url 'pagina_index' %}" class="active">INICIO</a>
+  <a href="{% url 'pagina_login' %}">INICIAR SESION</a>
+  <a href="{% url 'pagina_ordenes' %}">ORDENES</a>
+  <a href="{% url 'pagina_clientes' %}">CLIENTES</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+<!-- FIN MENU -->
+
+<!-- Header -->
+<div class="banner">
+	    <img src="{% static 'imagenes/banner.jpg' %}" alt="" class="responsive">
+	    <div class="contenedor">
+	        <h2 class="banner_titulo">Mantención Ascensores</h2>
+	        <p class="banner_txt">La mejor empresa en el rubro</p>
+	    </div>
+</div>
+<!-- CONTENIDO -->
+<div class="contenedor">
+  <div class="botones">
+    <a class="boton" href="{% url 'pagina_cliente' %}">Ingresar nuevo cliente</a>
+    <a class="boton" href="{% url 'pagina_listaclientes' %}">Listar clientes</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <h3>AV-AS-IJ</h3>
+    <h4>Analista Programador Computacional 001D</h4>
+</div>
+</body>
+</html>

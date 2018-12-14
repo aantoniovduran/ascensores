@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load staticfiles %}
+<head>
+<title>Ascensores</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/font.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/png" href="{% static 'imagenes/icono.ico' %}" />
+</head>
+<body>
+
+<!-- MENU -->
+
+<div class="topnav" id="myTopnav">
+  <a href="{% url 'pagina_index' %}" class="active">INICIO</a>
+  <a href="{% url 'pagina_login' %}">INICIAR SESION</a>
+  <a href="{% url 'pagina_ordenes' %}">ORDENES</a>
+  <a href="{% url 'pagina_clientes' %}">CLIENTES</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+
+<!-- FIN MENU -->
+
+<!-- Header -->
+<div class="banner">
+	    <img src="{% static 'imagenes/banner.jpg' %}" alt="" class="responsive">
+	    <div class="contenedor">
+	        <h2 class="banner_titulo">Mantención Ascensores</h2>
+	        <p class="banner_txt">La mejor empresa en el rubro</p>
+	    </div>
+</div>
+<!-- CONTENIDO -->
+
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+        <h2 style="text-align:center">Iniciar sesion con redes sociales</h2>
+      <div class="col">
+        <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+         </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
+      </div>
+
+      <div class="col">
+        <div class="hide-md-lg">
+          <h3>O ingrese sus credenciales</h3>
+        </div>
+
+        <input type="text" name="correo" placeholder="correo.." required>
+        <input type="password" name="contraseña" placeholder="contraseña.." required>
+        <a class="boton" href="{% url 'pagina_index' %}">iniciar sesion</a>
+      </div>
+      
+    </div>
+  </form>
+</div>
+
+<div class="bottom-container">
+  <div class="row">
+    <div class="col">
+      <a href="{% url 'pagina_formulario' %}" style="color:white" class="btn">Registrar tecnico</a>
+    </div>
+    <div class="col">
+      <a href="#" style="color:white" class="btn">Olvidaste tu contraseña?</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+    <h3>AV-AS-IJ</h3>
+    <h4>Analista Programador Computacional 001D</h4>
+</div>
+
+</body>
+</html>
